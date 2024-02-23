@@ -1,0 +1,7 @@
+.home{
+  background-image: url('../assets/home-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  margin-bottom: -25px;
+}
