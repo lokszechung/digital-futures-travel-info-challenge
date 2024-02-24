@@ -5,18 +5,21 @@ import SavedView from "./views/SavedView";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
+import "./App.css"
+
 const App = () => {
     return (
       <>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="/saved" element={<SavedView />} />
-          <Route path="/location" element={<LocationView />} />
-        </Routes>
+        {/* // <div className="routes-div"> */}
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/saved" element={<SavedView />} />
+            <Route path="/location" element={<LocationView />} />
+          </Routes>
+        {/* // </div> */}
         <Footer />
       </>
-      
     );
 };
 
