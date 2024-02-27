@@ -1,6 +1,6 @@
-import "./TellingYouAbout.css"
+import "./WeatherLocation.css"
 
-const TellingYouAbout = () => {
+const WeatherLocation = () => {
   return (
     <div className="location-text-container row justify-content-center align-items-center">
       <h2 className="text-center">Telling you about...</h2>
@@ -10,4 +10,4 @@ const TellingYouAbout = () => {
   )
 }
 
-export default TellingYouAbout
+export default WeatherLocation

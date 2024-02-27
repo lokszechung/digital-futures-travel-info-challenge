@@ -1,0 +1,16 @@
+.weather-daily-container{
+  width: 200px;
+  aspect-ratio: 1/1;
+  border: 1px solid red;
+  flex-basis: 50%;
+} 
+
+.weather-daily-container:not(:first-child){
+  border: 1px solid blue;
+  margin-left: calc(10px + 1vw);
+
+  @media (max-width: 768px) {
+    border: 1px dotted blue;
+    margin-left: auto;
+  }
+}

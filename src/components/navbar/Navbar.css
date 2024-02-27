@@ -6,6 +6,10 @@
 
 .logo{
   width: 250px;
+
+  @media (max-width: 576px) {
+    width: 180px;
+  }
 }
 
 

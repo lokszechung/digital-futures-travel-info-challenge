@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import "./TellMeAbout.css"
+import "./HomeLocationSearch.css"
 
 const TellMeAbout = () => {
 
