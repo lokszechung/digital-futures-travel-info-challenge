@@ -1,0 +1,21 @@
+.navbar-toggler:focus, .btn-close:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777 !important;
+  font-weight: 600 !important;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: black !important;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: initial;
+}

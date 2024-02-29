@@ -1,5 +1,6 @@
 .navbar{
   margin: 20px;
+  /* padding-top: 20px !important; */
   border-radius: 15px;
   height: 75px;
 }
@@ -10,19 +11,4 @@
   @media (max-width: 576px) {
     width: 180px;
   }
-}
-
-
-.navbar-toggler:focus, .btn-close:focus {
-  box-shadow: none !important;
-  outline: none;
-}
-
-.nav-link {
-  color: #666777 !important;
-  font-weight: 600 !important;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: black !important;
 }

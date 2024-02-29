@@ -12,4 +12,7 @@ Their latest idea is a web-based travel information application. The initial req
 4. As a user, I want my query to return a 5 day forcast of the location from a weather API, so that
 5. As a user, I want to see a new view displayed when forecast data is returned, so that
 6. As a user, I want to be able to save a location as a favourite, so that I can quickly see certain locations.
-7. As a user, I want to application to be responsve across the main breakpoints for devices
+7. As a user, I want to application to be responsive across the main breakpoints for devices
+
+8. As a user, I want the navbar to only display "My Saved Locations" if user has indeed got any saved locations, so that I do not get confused.
+9. ✓ As a user, I want the navbar to show search bar if I'm not on the home page, so that

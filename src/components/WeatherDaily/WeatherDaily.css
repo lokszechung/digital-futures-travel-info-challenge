@@ -1,16 +1,31 @@
 .weather-daily-container{
-  width: 200px;
-  aspect-ratio: 1/1;
-  border: 1px solid red;
-  flex-basis: 50%;
+  width: 180px;
+  height: 180px;
+  /* aspect-ratio: 1/1; */
+  border-radius: 50px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255,255,255,0.6);
+
+  @media (max-width: 576px) {
+    border: 1px solid lightblue;
+  }
 } 
 
-.weather-daily-container:not(:first-child){
-  border: 1px solid blue;
-  margin-left: calc(10px + 1vw);
-
-  @media (max-width: 768px) {
-    border: 1px dotted blue;
-    margin-left: auto;
-  }
+.daily-icon{
+  width: 80px;
 }
+
+.daily-temp{
+  margin-bottom: 0;
+}
+
+.daily-date{
+  margin-bottom: 0;
+}
+
