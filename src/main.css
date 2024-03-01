@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
-  /* overflow: hidden; */
 }
 
 body {
@@ -12,14 +11,5 @@ body {
   display: flex !important;
   flex-direction: column !important;
   min-height: 100vh !important;
-  background-image: url("./assets/home-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
-@media (max-width: 576px) {
-  body {
-    background-image: none;
-  }
-}

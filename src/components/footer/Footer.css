@@ -1,6 +1,8 @@
 .footer {
-  transform: translate(0, -25px);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -25px);
   margin-bottom: -25px;
-  /* position: fixed;
-  bottom: 0; */
+  position: absolute;
+  bottom: 0;
 }

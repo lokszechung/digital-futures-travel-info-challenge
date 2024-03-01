@@ -8,7 +8,7 @@ const WeatherWeekly = ({weatherWeeklyData}) => {
     return <p>loading...</p>
   }
 
-  console.log(weatherWeeklyData)
+  // console.log(weatherWeeklyData)
 
   return (
     <div className="weather-weekly-container">

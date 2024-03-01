@@ -33,7 +33,8 @@ const LocationView = () => {
 
   useEffect(() => {
     if(!weatherData){
-      console.log("loading")
+      // console.log("loading")
+      return
     }
     if(weatherData){
       // console.log(weatherData)
@@ -60,7 +61,6 @@ const LocationView = () => {
         <p>loading...</p>
       }
     </div>
-    
   )
 }
 

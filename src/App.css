@@ -1,24 +1,11 @@
-/* .content-div{
-  display: 'flex' !important;
-  flex-direction: 'column' !important;
-  min-height: '100vh' !important;
-}
-
-
-.routes-div{
-  flex-grow: 1;
-} */
-
 body {
   background-image: url("./assets/home-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
-}
 
-@media (max-width: 576px) {
-  body {
+  @media (max-width: 576px) {
     background-image: none;
   }
 }

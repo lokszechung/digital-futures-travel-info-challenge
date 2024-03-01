@@ -1,3 +1,13 @@
-.location-text-container{
+/* .location-text-container{
   margin-top: 120px !important;
+} */
+
+.bookmark{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* .bookmark-icon{
+  margin: 16px;
+} */
