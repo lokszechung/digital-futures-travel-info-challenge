@@ -10,24 +10,6 @@ import Footer from "./components/Footer/Footer";
 import "./App.css"
 
 const App = () => {
-
-    // const [ weatherData, setWeatherData ] = useState(null)
-
-    // const getWeatherData = async () => {
-    //   try{
-    //     const response = await getLocationWeatherUtil()
-    //     // console.log(response)
-    //     setWeatherData(response.data)
-    //   } 
-    //   catch (e) {
-    //     console.log(e)
-    //   }
-    // }
-
-    // useEffect(() => {
-    //   getWeatherData()
-    // }, [])
-
     return (
       <>
         <Navbar />
