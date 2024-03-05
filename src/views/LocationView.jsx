@@ -8,16 +8,16 @@ import WeatherWeekly from "../components/WeatherWeekly/WeatherWeekly"
 import "./LocationView.css"
 import { useEffect, useState } from "react"
 
-const LocationView = () => {
+const LocationView = ({ search }) => {
 
   const [ weatherData, setWeatherData ] = useState(null)
   const [ error, setError ] = useState(null)
-  const [days, setDays] = useState([])
-  const [location, setLocation] = useState("")
+  const [ days, setDays ] = useState([])
+  const [ location, setLocation ] = useState("")
 
   const getWeatherData = async () => {
     try{
-      const response = await getLocationWeatherUtil()
+      const response = await getLocationWeatherUtil(search || localStorage.getItem("searchQuery"))
       // console.log(response)
       setWeatherData(response.data)
     } 
@@ -29,7 +29,7 @@ const LocationView = () => {
 
   useEffect(() => {
     getWeatherData()
-  }, [])
+  }, [search])
 
   useEffect(() => {
     if(!weatherData){

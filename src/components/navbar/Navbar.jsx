@@ -6,7 +6,7 @@ import NavbarItems from "./NavbarItems/NavbarItems"
 
 import "./Navbar.css"
 
-const Navbar = () => {
+const Navbar = ({ setSearch }) => {
   const siteLocation = useLocation()
   const isHomeView = siteLocation.pathname === "/"
 
@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
           <div className="offcanvas-body">
               <NavbarItems />
-            {isHomeView ? <></> : <NavbarSearch />}
+            {isHomeView ? <></> : <NavbarSearch setSearch={setSearch} />}
           </div>
         </div>
       </div>

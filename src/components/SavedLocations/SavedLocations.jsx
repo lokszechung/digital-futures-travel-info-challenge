@@ -25,8 +25,6 @@ const SavedLocations = () => {
       })}
     </div>
   )
-    
-  
 }
 
 export default SavedLocations

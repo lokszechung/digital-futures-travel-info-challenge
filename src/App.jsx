@@ -10,17 +10,20 @@ import Footer from "./components/Footer/Footer";
 import "./App.css"
 
 const App = () => {
-    return (
-      <>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/saved" element={<SavedView />} />
-            <Route path="/location" element={<LocationView />} />
-          </Routes>
-        <Footer />
-      </>
-    );
+
+  const [ search, setSearch ] = useState("")
+
+  return (
+    <>
+      <Navbar search={search} setSearch={setSearch} />
+        <Routes>
+          <Route path="/" element={<HomeView search={search} setSearch={setSearch} />} />
+          <Route path="/saved" element={<SavedView />} />
+          <Route path="/location" element={<LocationView search={search} />} />
+        </Routes>
+      <Footer />
+    </>
+  );
 };
 
 export default App;
