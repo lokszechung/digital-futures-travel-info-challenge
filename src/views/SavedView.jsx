@@ -3,11 +3,11 @@ import SavedLocations from "../components/SavedLocations/SavedLocations"
 
 import "./SavedView.css"
 
-const SavedView = () => {
+const SavedView = ({ savedLocations, setSavedLocations }) => {
   return (
     <div className="saved-view-container">
       <SavedTitle />
-      <SavedLocations />
+      <SavedLocations savedLocations={savedLocations} setSavedLocations={setSavedLocations} />
     </div>
   )
 }

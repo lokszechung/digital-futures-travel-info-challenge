@@ -8,7 +8,7 @@ import WeatherWeekly from "../components/WeatherWeekly/WeatherWeekly"
 import "./LocationView.css"
 import { useEffect, useState } from "react"
 
-const LocationView = ({ search }) => {
+const LocationView = ({ search, savedLocations, setSavedLocations }) => {
 
   const [ weatherData, setWeatherData ] = useState(null)
   const [ error, setError ] = useState(null)
@@ -18,7 +18,6 @@ const LocationView = ({ search }) => {
   const getWeatherData = async () => {
     try{
       const response = await getLocationWeatherUtil(search || localStorage.getItem("searchQuery"))
-      // console.log(response)
       setWeatherData(response.data)
     } 
     catch (e) {
@@ -33,24 +32,19 @@ const LocationView = ({ search }) => {
 
   useEffect(() => {
     if(!weatherData){
-      // console.log("loading")
       return
     }
     if(weatherData){
-      // console.log(weatherData)
       setDays(updateState(weatherData))
       setLocation(weatherData.city.name)
     }
-    // console.log(days)
   }, [weatherData])
-
-  
 
   return (
     <div className="location-view-container">
       {weatherData ? 
       <>
-        <WeatherLocation location={location}/>
+        <WeatherLocation location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>
         <WeatherToday weatherTodayData={days[0]}/>
         <WeatherWeekly weatherWeeklyData={days.slice(1)}/>
       </>

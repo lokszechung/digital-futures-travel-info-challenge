@@ -12,14 +12,19 @@ import "./App.css"
 const App = () => {
 
   const [ search, setSearch ] = useState("")
+  const [ savedLocations, setSavedLocations ] = useState(JSON.parse(localStorage.getItem("savedLocations")))
+
+  // useEffect(() => {
+  //   console.log(savedLocations)
+  // }, [])
 
   return (
     <>
-      <Navbar search={search} setSearch={setSearch} />
+      <Navbar setSearch={setSearch} savedLocations={savedLocations} />
         <Routes>
           <Route path="/" element={<HomeView search={search} setSearch={setSearch} />} />
-          <Route path="/saved" element={<SavedView />} />
-          <Route path="/location" element={<LocationView search={search} />} />
+          <Route path="/saved" element={<SavedView savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
+          <Route path="/location" element={<LocationView search={search} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>} />
         </Routes>
       <Footer />
     </>

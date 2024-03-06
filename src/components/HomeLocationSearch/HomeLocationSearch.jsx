@@ -14,7 +14,7 @@ const HomeLocationSearch = ({ search, setSearch }) => {
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     console.log("Search attempted for ", search)
-    localStorage.setItem("searchQuery", search);
+    localStorage.setItem("searchQuery", search)
     navigate("/location")
   }
 

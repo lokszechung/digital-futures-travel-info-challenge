@@ -6,13 +6,13 @@ import useScreenSize from "../../hooks/useScreenSize"
 
 import "./SavedLocations.css"
 
-const SavedLocations = () => {
+const SavedLocations = ({ savedLocations, setSavedLocations }) => {
 
   const screenSize = useScreenSize()
 
   const [ orderedLocations, setOrderedLocations ] = useState([])
 
-  const savedLocations = ["Accra", "Birmingham", "Chicago", "Dubai", "Edinburgh", "Frankfurt", "Gold Coast"]
+  // const savedLocations = ["Accra", "Birmingham", "Chicago", "Dubai", "Edinburgh", "Frankfurt", "Gold Coast"]
 
   useEffect(() => {
     setOrderedLocations(sortLocations(savedLocations, screenSize))

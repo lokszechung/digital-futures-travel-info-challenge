@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 
 import "./NavbarItems.css"
 
-const NavbarItems = () => {
+const NavbarItems = ({ setSearch, savedLocations }) => {
 
   const siteLocation = useLocation()
   
@@ -13,7 +13,11 @@ const NavbarItems = () => {
     setCurrentView(siteLocation.pathname)
   }, [siteLocation])
 
-  const locations = ["London", "Hong Kong", "New York", "Tokyo", "Seoul"]
+  function handleClickSaved(location) {
+    setSearch(location)
+    localStorage.setItem("searchQuery", location) 
+    navigate("/location")
+  }
 
   return (
     <ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
@@ -25,8 +29,8 @@ const NavbarItems = () => {
           My Saved Locations
         </Link>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          {locations.map((location, i) => {
-            return <li key={i}><Link to="/location" className="dropdown-item" >{location}</Link></li>
+          {savedLocations.map((location) => {
+            return <li key={location} className="dropdown-item" onClick={() => {handleClickSaved(location)}}>{location}</li>
           })}
         </ul>
       </li>
