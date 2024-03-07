@@ -12,7 +12,8 @@ import "./App.css"
 const App = () => {
 
   const [ search, setSearch ] = useState("")
-  const [ savedLocations, setSavedLocations ] = useState(JSON.parse(localStorage.getItem("savedLocations")))
+
+  const [ savedLocations, setSavedLocations ] = useState(JSON.parse(localStorage.getItem("savedLocations")) || [])
 
   // useEffect(() => {
   //   console.log(savedLocations)

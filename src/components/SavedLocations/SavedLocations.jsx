@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import SavedSingleLocation from "../SavedSingleLocation/SavedSingleLocation"
 import sortLocations from "../../utils/sortLocations"
 import useScreenSize from "../../hooks/useScreenSize"
+// import ConfirmUnsaveModal from "../ConfirmUnsaveModal/ConfirmUnsaveModal"
 
 import "./SavedLocations.css"
 
@@ -12,16 +13,14 @@ const SavedLocations = ({ savedLocations, setSavedLocations }) => {
 
   const [ orderedLocations, setOrderedLocations ] = useState([])
 
-  // const savedLocations = ["Accra", "Birmingham", "Chicago", "Dubai", "Edinburgh", "Frankfurt", "Gold Coast"]
-
   useEffect(() => {
     setOrderedLocations(sortLocations(savedLocations, screenSize))
-  }, [screenSize])
+  }, [screenSize, savedLocations])
 
   return (
     <div className="saved-locations">
       {orderedLocations.map(location => {
-        return <SavedSingleLocation key={location} location={location} />
+        return <SavedSingleLocation key={location} location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />
       })}
     </div>
   )

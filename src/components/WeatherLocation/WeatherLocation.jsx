@@ -17,24 +17,19 @@ const WeatherLocation = ({ location, savedLocations, setSavedLocations }) => {
 
   function handleBookmark() {
     if(!locationIsSaved && savedLocations) {
-      console.log("saving to existing key")
-      const locationsToSave = [...savedLocations, location]
-      console.log(locationsToSave)
-      localStorage.setItem("savedLocations", JSON.stringify(locationsToSave))
+      // const locationsToSave = [...savedLocations, location]
+      localStorage.setItem("savedLocations", JSON.stringify([...savedLocations, location]))
       setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
       return
     }
     if(!locationIsSaved && !savedLocations){
-      console.log("saving to new key")
       localStorage.setItem("savedLocations", JSON.stringify([location]))
       setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
       return 
     }
     if(locationIsSaved){
-      console.log("removing location")
       const locationsToSave = [...savedLocations].filter(loc => loc !== location)
-      console.log(locationsToSave)
-      localStorage.setItem("savedLocations", JSON.stringify(locationsToSave))
+      localStorage.setItem("savedLocations", JSON.stringify([...savedLocations].filter(loc => loc !== location)))
       setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
       return
     }

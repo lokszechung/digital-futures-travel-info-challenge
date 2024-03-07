@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// const getLocationWeatherUtil = async () => {
-
 async function getLocationWeatherUtil(search) {
 
   try {

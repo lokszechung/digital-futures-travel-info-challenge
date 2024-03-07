@@ -14,3 +14,7 @@
     width: 100%;
   }
 }
+
+.saved-bookmark-icon{
+  cursor: pointer;
+}

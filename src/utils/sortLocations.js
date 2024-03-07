@@ -2,14 +2,12 @@ function sortLocations(locations, screenWidth){
 
   switch (screenWidth) {
     case "x-small":
-      // console.log(`sorting for ${screenWidth}`)
       return locations
     case "small":
-      // console.log(`sorting for ${screenWidth}`)
       return sortTwoCol()
     case "medium":
     case "large":
-      // console.log(`sorting for ${screenWidth}`)
+  
       return sortThreeCol()
     default:
       return locations
