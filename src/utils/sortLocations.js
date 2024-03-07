@@ -7,66 +7,76 @@ function sortLocations(locations, screenWidth){
       return sortTwoCol()
     case "medium":
     case "large":
-  
       return sortThreeCol()
     default:
       return locations
   }
 
   function sortTwoCol(){
-    if (locations.length <= 2) {
-      return locations
+    const n = locations.length
+    const ceil = Math.ceil(n/2)
+    let pointer = 0
+    const result = []
+
+    if (n % 2 === 0) {
+      for (let i=0; i < ceil; i++){
+        result.push(locations[pointer])
+        result.push(locations[pointer + ceil])
+        pointer++
+      }
     }
 
-    if (locations.length === 3) {
-      return [locations[0], locations[2], locations[1]]
-    }
-  
-    if (locations.length === 4) {
-      return [locations[0], locations[2], locations[1], locations[3]]
+    if (n % 2 === 1) {
+      for (let i=1; i < ceil; i++){
+        result.push(locations[pointer])
+        result.push(locations[pointer + ceil])
+        pointer++
+      }
+      result.push(locations[pointer])
     }
 
-    if (locations.length === 5) {
-      return [locations[0], locations[3], locations[1], locations[4], locations[2]]
-    }
-  
-    if (locations.length === 6) {
-      return [locations[0], locations[3], locations[1], locations[4], locations[2], locations[5]]
-    }
-  
-    if (locations.length === 7) {
-      return [locations[0], locations[4], locations[1], locations[5], locations[2], locations[6], locations[3]]
-    }
-  
-    if (locations.length === 8) {
-      return [locations[0], locations[4], locations[1], locations[5], locations[2], locations[6], locations[3], locations[7]]
-    }
+    return result
   }
 
   function sortThreeCol(){
-    if (locations.length <= 3) {
-      return locations
+    
+    const n = locations.length
+    const ceil = Math.ceil(n/3)
+    let pointer = 0
+    const result = []
+
+    if (n % 3 === 0) {
+      for(let i=0; i < ceil; i++) {
+        result.push(locations[pointer])
+        result.push(locations[pointer + ceil])
+        result.push(locations[pointer + (2 * ceil)])
+        pointer++
+      }
     }
-  
-    if (locations.length === 4) {
-      return [locations[0], locations[2], locations[3], locations[1]]
+
+    if (n % 3 === 1) {
+      for(let i=1; i < ceil; i++) {
+        result.push(locations[pointer])
+        result.push(locations[pointer + ceil])
+        result.push(locations[pointer + (2 * ceil - 1)])
+        pointer++
+      }
+      result.push(locations[pointer])
     }
-  
-    if (locations.length === 5) {
-      return [locations[0], locations[2], locations[4], locations[1], locations[3]]
+
+    if (n % 3 === 2) {
+      for(let i=1; i < ceil; i++) {
+        result.push(locations[pointer])
+        result.push(locations[pointer + ceil])
+        result.push(locations[pointer + (2 * ceil)])
+        pointer++
+      }
+
+      result.push(locations[pointer])
+      result.push(locations[pointer + ceil])
     }
-  
-    if (locations.length === 6) {
-      return [locations[0], locations[2], locations[4], locations[1], locations[3], locations[5]]
-    }
-  
-    if (locations.length === 7) {
-      return [locations[0], locations[3], locations[5], locations[1], locations[4], locations[6], locations[2]]
-    }
-  
-    if (locations.length === 8) {
-      return [locations[0], locations[3], locations[6], locations[1], locations[4], locations[7], locations[2], locations[5]]
-    }
+
+    return result
   }
   
 }
