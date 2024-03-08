@@ -1,9 +1,7 @@
 const ConfirmUnsaveModal = ({ location, savedLocations, setSavedLocations }) => {
 
   function handleUnsave() {
-    console.log("removing location", location)
     const locationsToSave = [...savedLocations].filter(loc => loc !== location)
-    console.log(locationsToSave)
     localStorage.setItem("savedLocations", JSON.stringify(locationsToSave))
     setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
   }
