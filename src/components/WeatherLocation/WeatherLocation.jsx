@@ -10,22 +10,16 @@ const WeatherLocation = ({ location, savedLocations, setSavedLocations }) => {
   const [ locationIsSaved, setLocationIsSaved ] = useState(savedLocations ? savedLocations.includes(location) : false)  
 
   function handleBookmark() {
-    if(!locationIsSaved && savedLocations) {
-      localStorage.setItem("savedLocations", JSON.stringify([...savedLocations, location]))
-      setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
-      return
+    let updatedLocations = []
+    
+    if (!locationIsSaved) {
+      updatedLocations = savedLocations ? [...savedLocations, location] : [location]
+    } 
+    if (locationIsSaved) {
+      updatedLocations = savedLocations.filter(loc => loc !== location)
     }
-    if(!locationIsSaved && !savedLocations){
-      localStorage.setItem("savedLocations", JSON.stringify([location]))
-      setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
-      return 
-    }
-    if(locationIsSaved){
-      const locationsToSave = [...savedLocations].filter(loc => loc !== location)
-      localStorage.setItem("savedLocations", JSON.stringify([...savedLocations].filter(loc => loc !== location)))
-      setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
-      return
-    }
+    localStorage.setItem("savedLocations", JSON.stringify(updatedLocations))
+    setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
   }
 
   useEffect(() => {
