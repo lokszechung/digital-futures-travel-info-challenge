@@ -12,20 +12,15 @@ import "./App.css"
 const App = () => {
 
   const [ search, setSearch ] = useState("")
-  const [ error, setError ] = useState(null)
   const [ savedLocations, setSavedLocations ] = useState(JSON.parse(localStorage.getItem("savedLocations")) || [])
-
-  function resetError() {
-    setError(null)
-  }
 
   return (
     <>
-      <Navbar search={search} setSearch={setSearch} savedLocations={savedLocations} setError={setError}/>
+      <Navbar search={search} setSearch={setSearch} savedLocations={savedLocations} />
         <Routes>
-          <Route path="/" element={<HomeView search={search} setSearch={setSearch} setError={setError} />} />
+          <Route path="/" element={<HomeView search={search} setSearch={setSearch} />} />
           <Route path="/saved" element={<SavedView savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
-          <Route path="/location" element={<LocationView search={search} savedLocations={savedLocations} setSavedLocations={setSavedLocations} error={error} setError={setError} />} />
+          <Route path="/location" element={<LocationView search={search} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
         </Routes>
       <Footer />
     </>

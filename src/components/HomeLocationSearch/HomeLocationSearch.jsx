@@ -1,27 +1,22 @@
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import "./HomeLocationSearch.css"
+import { set } from 'mongoose'
 
-const HomeLocationSearch = ({ search, setSearch, setError }) => { 
+const HomeLocationSearch = ({ setSearch }) => { 
 
   const navigate = useNavigate()
   const inputRef = useRef(null)
-
-  // const handleSearchInput = (e) => {
-  //   setSearch(e.target.value)
-  // }
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     const inputValue = inputRef.current.value
     if (inputValue) {
-      setSearch(inputRef.current.value)
-      localStorage.setItem("searchQuery", inputRef.current.value) 
-      setError(null)
+      setSearch(inputValue)
+      localStorage.setItem("searchQuery", inputValue) 
       navigate("/location")
     }
-    
   }
 
   return (

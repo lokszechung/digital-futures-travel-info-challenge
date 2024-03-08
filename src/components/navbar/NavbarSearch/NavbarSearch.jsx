@@ -5,7 +5,7 @@ import searchIcon from "../../../assets/search-icon.svg"
 
 import "./NavbarSearch.css"
 
-const NavbarSearch = ({ setSearch, setError }) => {
+const NavbarSearch = ({ setSearch }) => {
 
   const navigate = useNavigate()
   const inputRef = useRef(null)
@@ -15,7 +15,6 @@ const NavbarSearch = ({ setSearch, setError }) => {
     const inputValue = inputRef.current.value
     if (inputValue) {
       setSearch(inputValue )
-      setError(null)
       localStorage.setItem("searchQuery", inputValue) 
       inputRef.current.value = ""
       navigate("/location")

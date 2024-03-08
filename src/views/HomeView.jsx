@@ -4,11 +4,11 @@ import bg from "../assets/home-bg.jpg"
 import "./HomeView.css"
 import HomeLocationSearch from "../components/HomeLocationSearch/HomeLocationSearch"
 
-const HomeView = ({search, setSearch, setError }) => {
+const HomeView = ({ setSearch }) => {
   return (
     <>
       <div className="container-fluid home vh-100 p-0 d-flex justify-content-center align-items-center">
-        <HomeLocationSearch setSearch={setSearch} setError={setError} />
+        <HomeLocationSearch setSearch={setSearch} />
       </div>
     </>
     

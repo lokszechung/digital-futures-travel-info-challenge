@@ -2,7 +2,7 @@ import "./WeatherWeekly.css"
 
 import WeatherDaily from "../WeatherDaily/WeatherDaily"
 
-const WeatherWeekly = ({weatherWeeklyData}) => {
+const WeatherWeekly = ({ weatherWeeklyData, loading }) => {
 
   if(!weatherWeeklyData){
     return (

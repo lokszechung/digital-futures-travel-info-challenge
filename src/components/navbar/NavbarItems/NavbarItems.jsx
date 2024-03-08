@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import "./NavbarItems.css"
 
-const NavbarItems = ({ setSearch, savedLocations, setError }) => {
+const NavbarItems = ({ setSearch, savedLocations }) => {
 
   const navigate = useNavigate()
 
@@ -16,7 +16,6 @@ const NavbarItems = ({ setSearch, savedLocations, setError }) => {
   }, [siteLocation])
 
   function handleClickSaved(location) {
-    setError(null)
     setSearch(location)
     localStorage.setItem("searchQuery", location) 
     navigate("/location")
