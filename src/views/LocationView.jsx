@@ -8,21 +8,19 @@ import WeatherWeekly from "../components/WeatherWeekly/WeatherWeekly"
 import "./LocationView.css"
 import { useEffect, useState } from "react"
 
-const LocationView = ({ search, savedLocations, setSavedLocations }) => {
+const LocationView = ({ search, savedLocations, setSavedLocations, error, setError }) => {
 
   const [ weatherData, setWeatherData ] = useState(null)
-  const [ error, setError ] = useState(null)
   const [ days, setDays ] = useState([])
   const [ location, setLocation ] = useState("")
 
   const getWeatherData = async () => {
-    try{
+    try {
       const response = await getLocationWeatherUtil(search || localStorage.getItem("searchQuery"))
       setWeatherData(response.data)
     } 
     catch (e) {
-      console.log(e)
-      setError(e.message ? e.message : e)
+      setError(e.response.data.cod)
     }
   }
 
@@ -42,17 +40,20 @@ const LocationView = ({ search, savedLocations, setSavedLocations }) => {
 
   return (
     <div className="location-view-container">
-      {weatherData ? 
-      <>
-        <WeatherLocation location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>
-        <WeatherToday weatherTodayData={days[0]}/>
-        <WeatherWeekly weatherWeeklyData={days.slice(1)}/>
-      </>
-        :
-        error ? 
-        <p>{error}</p>
-        :
-        <p>loading...</p>
+      {weatherData && !error && 
+        <>
+          <WeatherLocation location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>
+          <WeatherToday weatherTodayData={days[0]}/>
+          <WeatherWeekly weatherWeeklyData={days.slice(1)}/>
+        </>
+      }
+      {!weatherData && !error &&
+          <div className="spinner-border loading-icon" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+      }
+      {error &&
+        <p className="text-center fw-bold">{error === "404" ? `${search} is not a place, try searching again.` : `Error status: ${error}`}</p>
       }
     </div>
   )

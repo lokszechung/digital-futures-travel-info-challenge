@@ -6,9 +6,11 @@ import NavbarItems from "./NavbarItems/NavbarItems"
 
 import "./Navbar.css"
 
-const Navbar = ({ setSearch, savedLocations }) => {
+const Navbar = ({ search, setSearch, savedLocations, setError }) => {
   const siteLocation = useLocation()
   const isHomeView = siteLocation.pathname === "/"
+
+  // console.log("navbar:::", setError)
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -23,8 +25,8 @@ const Navbar = ({ setSearch, savedLocations }) => {
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body">
-              <NavbarItems setSearch={setSearch} savedLocations={savedLocations} />
-            {isHomeView ? <></> : <NavbarSearch setSearch={setSearch} />}
+              <NavbarItems setSearch={setSearch} savedLocations={savedLocations} setError={setError} />
+            {isHomeView ? <></> : <NavbarSearch search={search} setSearch={setSearch} setError={setError} />}
           </div>
         </div>
       </div>

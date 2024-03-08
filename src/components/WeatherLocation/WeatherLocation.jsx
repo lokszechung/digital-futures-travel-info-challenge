@@ -7,17 +7,10 @@ import "./WeatherLocation.css"
 
 const WeatherLocation = ({ location, savedLocations, setSavedLocations }) => {
 
-  // const [ savedLocations, setSavedLocations ] = useState(JSON.parse(localStorage.getItem("savedLocations")))
-  const [ locationIsSaved, setLocationIsSaved ] = useState(savedLocations ? savedLocations.includes(location) : false)
-
-  useEffect(() => {
-    console.log(savedLocations)
-  }, [])
-  
+  const [ locationIsSaved, setLocationIsSaved ] = useState(savedLocations ? savedLocations.includes(location) : false)  
 
   function handleBookmark() {
     if(!locationIsSaved && savedLocations) {
-      // const locationsToSave = [...savedLocations, location]
       localStorage.setItem("savedLocations", JSON.stringify([...savedLocations, location]))
       setSavedLocations(JSON.parse(localStorage.getItem("savedLocations")))
       return
@@ -47,7 +40,7 @@ const WeatherLocation = ({ location, savedLocations, setSavedLocations }) => {
       <h2 className="text-center fw-bold">{location}</h2>
       <div className="bookmark pb-3">
         <img className="bookmark-icon me-2" src={locationIsSaved ? bookmarkFilled : bookmark} alt={"bookmark"} onClick={handleBookmark} />
-        <p className="mb-0">Click to add to favourites</p>
+        <p className="mb-0">Click to {locationIsSaved ? "remove from" : "add to"} favourites</p>
       </div>
     </div>
   )

@@ -7,8 +7,7 @@ async function getLocationWeatherUtil(search) {
     return response
   }
   catch (e) {
-    console.log(e)
-    return e
+    throw e
   }
 
 }

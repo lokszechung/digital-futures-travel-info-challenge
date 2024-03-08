@@ -5,10 +5,14 @@ import WeatherDaily from "../WeatherDaily/WeatherDaily"
 const WeatherWeekly = ({weatherWeeklyData}) => {
 
   if(!weatherWeeklyData){
-    return <p>loading...</p>
+    return (
+      <div className="weather-weekly-container">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )
   }
-
-  // console.log(weatherWeeklyData)
 
   return (
     <div className="weather-weekly-container">

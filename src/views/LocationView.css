@@ -2,3 +2,9 @@
   min-height: 400px;
   margin-top: 120px;
 }
+
+.loading-icon{
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
