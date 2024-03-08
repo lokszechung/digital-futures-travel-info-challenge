@@ -12,7 +12,6 @@ const LocationView = ({ search, savedLocations, setSavedLocations, error, setErr
 
   const [ weatherData, setWeatherData ] = useState(null)
   const [ days, setDays ] = useState([])
-  const [ location, setLocation ] = useState("")
 
   const getWeatherData = async () => {
     try {
@@ -34,7 +33,6 @@ const LocationView = ({ search, savedLocations, setSavedLocations, error, setErr
     }
     if(weatherData){
       setDays(updateState(weatherData))
-      setLocation(weatherData.city.name)
     }
   }, [weatherData])
 
@@ -42,7 +40,7 @@ const LocationView = ({ search, savedLocations, setSavedLocations, error, setErr
     <div className="location-view-container">
       {weatherData && !error && 
         <>
-          <WeatherLocation location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>
+          <WeatherLocation location={weatherData.city.name} savedLocations={savedLocations} setSavedLocations={setSavedLocations}/>
           <WeatherToday weatherTodayData={days[0]}/>
           <WeatherWeekly weatherWeeklyData={days.slice(1)}/>
         </>
