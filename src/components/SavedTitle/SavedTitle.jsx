@@ -1,4 +1,4 @@
-import bookmarkFilled from "../../assets/bookmark-filled.png"
+import bookmarkFilled from "/public/assets/bookmark-filled.png"
 
 import "./SavedTitle.css"
 

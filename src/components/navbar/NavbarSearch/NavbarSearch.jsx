@@ -1,7 +1,7 @@
 
 import { useState, useRef } from "react"
 import { useNavigate } from 'react-router-dom'
-import searchIcon from "../../../assets/search-icon.svg"
+import searchIcon from "/public/assets/search-icon.svg"
 
 import "./NavbarSearch.css"
 

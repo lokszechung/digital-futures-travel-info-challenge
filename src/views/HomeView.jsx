@@ -1,6 +1,3 @@
-import Navbar from "../components/Navbar/Navbar"
-import bg from "../assets/home-bg.jpg"
-
 import "./HomeView.css"
 import HomeLocationSearch from "../components/HomeLocationSearch/HomeLocationSearch"
 

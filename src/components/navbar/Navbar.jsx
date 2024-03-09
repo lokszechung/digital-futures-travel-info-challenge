@@ -1,4 +1,4 @@
-import logo from "../../assets/weather.png"
+import logo from "/public/assets/weather.png"
 import { Link, useLocation } from "react-router-dom"
 
 import NavbarSearch from "./NavbarSearch/NavbarSearch"

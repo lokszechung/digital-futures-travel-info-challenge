@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
-import bookmark from "../../assets/bookmark.png"
-import bookmarkFilled from "../../assets/bookmark-filled.png"
+import bookmark from "/public/assets/bookmark.png"
+import bookmarkFilled from "/public/assets/bookmark-filled.png"
 
 import "./WeatherLocation.css"
 

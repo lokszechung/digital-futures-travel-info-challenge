@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import SavedSingleLocation from "../SavedSingleLocation/SavedSingleLocation"
 import sortLocations from "../../utils/sortLocations"
 import useScreenSize from "../../hooks/useScreenSize"
-// import ConfirmUnsaveModal from "../ConfirmUnsaveModal/ConfirmUnsaveModal"
 
 import "./SavedLocations.css"
 
