@@ -1,5 +1,5 @@
-import SavedTitle from "../components/SavedTitle/SavedTitle"
-import SavedLocations from "../components/SavedLocations/SavedLocations"
+import SavedTitle from "../../components/SavedComponents/SavedTitle/SavedTitle"
+import SavedLocations from "../../components/SavedComponents/SavedLocations/SavedLocations"
 
 import "./SavedView.css"
 

@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 
 import "./HomeLocationSearch.css"
-import { set } from 'mongoose'
 
 const HomeLocationSearch = ({ setSearch }) => { 
 

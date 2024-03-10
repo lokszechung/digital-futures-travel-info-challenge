@@ -23,7 +23,7 @@ const NavbarSearch = ({ setSearch }) => {
   }
 
   return (
-    <form className="d-flex nav-search" role="search" onSubmit={handleSearchSubmit}>
+    <form className="d-flex nav-search" role="search" data-testid="navbar-search" onSubmit={handleSearchSubmit}>
       <input className="form-control" type="search" placeholder="Search" ref={inputRef} />
       <button className="btn" type="submit"><img className="search-icon" src={searchIcon} alt="search icon" /></button>
     </form>

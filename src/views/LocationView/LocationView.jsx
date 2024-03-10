@@ -1,9 +1,9 @@
-import updateState from "../utils/extractWeatherData"
-import getLocationWeatherUtil from "../utils/getLocationWeatherUtil";
+import updateState from "../../utils/extractWeatherData"
+import getLocationWeatherUtil from "../../utils/getLocationWeatherUtil";
 
-import WeatherLocation from "../components/WeatherLocation/WeatherLocation"
-import WeatherToday from "../components/WeatherToday/WeatherToday"
-import WeatherWeekly from "../components/WeatherWeekly/WeatherWeekly"
+import WeatherLocation from "../../components/WeatherComponents/WeatherLocation/WeatherLocation"
+import WeatherToday from "../../components/WeatherComponents/WeatherToday/WeatherToday"
+import WeatherWeekly from "../../components/WeatherComponents/WeatherWeekly/WeatherWeekly"
 
 import "./LocationView.css"
 import { useEffect, useState } from "react"

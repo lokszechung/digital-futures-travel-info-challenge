@@ -1,5 +1,5 @@
-import getDayName from "../../utils/getDayName"
-import getImageUrl from "../../utils/getImageUrl"
+import getDayName from "../../../utils/getDayName"
+import getImageUrl from "../../../utils/getImageUrl"
 
 import "./WeatherDaily.css"
 

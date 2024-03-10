@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import getLocationWeatherUtil from "./utils/getLocationWeatherUtil";
-import HomeView from "./views/HomeView";
-import LocationView from "./views/LocationView";
-import SavedView from "./views/SavedView";
+import HomeView from "./views/HomeView/HomeView";
+import LocationView from "./views/LocationView/LocationView";
+import SavedView from "./views/SavedView/SavedView";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 

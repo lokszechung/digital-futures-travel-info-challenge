@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 
 import SavedSingleLocation from "../SavedSingleLocation/SavedSingleLocation"
-import sortLocations from "../../utils/sortLocations"
-import useScreenSize from "../../hooks/useScreenSize"
+import sortLocations from "../../../utils/sortLocations"
+import useScreenSize from "../../../hooks/useScreenSize"
 
 import "./SavedLocations.css"
 

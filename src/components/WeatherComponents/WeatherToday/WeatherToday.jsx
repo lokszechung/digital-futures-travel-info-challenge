@@ -1,5 +1,5 @@
-import getImageUrl from "../../utils/getImageUrl"
-import formatDate from "../../utils/formatDate"
+import getImageUrl from "../../../utils/getImageUrl"
+import formatDate from "../../../utils/formatDate"
 
 import "./WeatherToday.css"
 

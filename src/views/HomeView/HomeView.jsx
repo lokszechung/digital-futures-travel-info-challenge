@@ -1,5 +1,5 @@
 import "./HomeView.css"
-import HomeLocationSearch from "../components/HomeLocationSearch/HomeLocationSearch"
+import HomeLocationSearch from "../../components/HomeComponents/HomeLocationSearch/HomeLocationSearch"
 
 const HomeView = ({ setSearch }) => {
   return (
