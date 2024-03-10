@@ -5,16 +5,6 @@ import "./WeatherToday.css"
 
 const WeatherToday = ({ weatherTodayData, loading }) => {
 
-  // if(!weatherTodayData){
-  //   return (
-  //     <div className="weather-today-container">
-  //       <div className="spinner-border" role="status">
-  //         <span className="visually-hidden">Loading...</span>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
   const {date, icon, temp, weather_desc: desc} = weatherTodayData
 
   return (

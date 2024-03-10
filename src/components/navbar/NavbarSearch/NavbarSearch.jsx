@@ -12,12 +12,15 @@ const NavbarSearch = ({ setSearch }) => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
-    const inputValue = inputRef.current.value
+    const inputValue = inputRef.current.value.trim()
     if (inputValue) {
       setSearch(inputValue )
       localStorage.setItem("searchQuery", inputValue) 
       inputRef.current.value = ""
       navigate("/location")
+    }
+    if(!inputValue){
+      inputRef.current.value = ""
     }
     inputRef.current.blur()
   }

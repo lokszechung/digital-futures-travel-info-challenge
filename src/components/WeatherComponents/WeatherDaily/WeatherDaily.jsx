@@ -5,10 +5,6 @@ import "./WeatherDaily.css"
 
 const WeatherDaily = ({weatherDailyData}) => {
 
-  if(!weatherDailyData){
-    return <p>loading...</p>
-  }
-
   const {date, icon, temp, weather_desc: desc} = weatherDailyData
 
   return (

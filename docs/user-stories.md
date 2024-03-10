@@ -19,8 +19,8 @@ Their latest idea is a web-based travel information application. The initial req
 
 3. As a user, I want to be able to search by any town or city name, so that
 
-- TEST: When user types a location in HomeView, site navigates to LocationView
-- TODO TEST: When user types nothing, site does not navigate away
+- TEST: When user types and searches a location in HomeView, site navigates to LocationView
+- TODO TEST: When user types and searches nothing, site does not navigate away
 - TEST: getLocationWeatherUtil returns weather data for location searched
 
 4. As a user, I want my query to return a 5 day forcast of the location from a weather API, so that
@@ -29,6 +29,7 @@ Their latest idea is a web-based travel information application. The initial req
 
 5. As a user, I want to see a new view displayed when forecast data is returned, so that
 
+- TODO TEST: test when data is london, 4 weahter daily returned w(with info) etc
 - TODO TEST: test forecast data returned and the locations shown should be different for each search?
 - TODO TEST: Error when location doesn't exist
 
