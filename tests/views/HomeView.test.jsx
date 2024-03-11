@@ -19,7 +19,7 @@ describe("HomeView tests", () => {
 
     })
 
-    it("When user types and searches nothing, site does not navigate away", async () => {
+    it("When user types and searches nothing, site does not navigate away from HomeView", async () => {
 
       render(<MemoryRouter><App /></MemoryRouter>)
 
@@ -29,7 +29,7 @@ describe("HomeView tests", () => {
 
     })
 
-    it("When user types and searches whitespace, site does not navigate away", async () => {
+    it("When user types and searches whitespace, site does not navigate away from HomeView", async () => {
 
       render(<MemoryRouter><App /></MemoryRouter>)
 
