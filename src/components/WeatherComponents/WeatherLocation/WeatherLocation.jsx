@@ -29,7 +29,7 @@ const WeatherLocation = ({ location, savedLocations, setSavedLocations }) => {
   }, [location, savedLocations])
 
   return (
-    <div className="location-text-container">
+    <div className="location-text-container" data-testid="weather-location">
       <h2 className="text-center">Telling you about...</h2>
       <h2 className="text-center fw-bold">{location}</h2>
       <div className="bookmark pb-3">
