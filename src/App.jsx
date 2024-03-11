@@ -19,7 +19,7 @@ const App = () => {
       <Navbar search={search} setSearch={setSearch} savedLocations={savedLocations} />
         <Routes>
           <Route path="/" element={<HomeView setSearch={setSearch} />} />
-          <Route path="/saved" element={<SavedView savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
+          <Route path="/saved" element={<SavedView setSearch={setSearch} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
           <Route path="/location" element={<LocationView search={search} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />} />
         </Routes>
       <Footer />

@@ -2,6 +2,8 @@
 
 ## User Stories and Test Plans
 
+### Core Features
+
 1. **As a user, I want to be able to access a web-based travel information application, so I can get information about a location**
 2. **As a user, I want to be able to see a location search box on the home page, so I know where to search for a location**
 
@@ -44,6 +46,31 @@
 
 - TEST: Navbar search bar should not be displayed when in HomeView
 - TEST: Navbar search bar should be displayed when not in HomeView
+
+### Additonal Features (GEN AI)
+
+10. **As a user, I want to see a map of the selected location, so that I can visualize its geographic context**
+
+- TEST: Test that the map component is rendered on the weather view
+- TEST: Map API/service to return specific location data
+- TEST: Verify that the map correctly displays the selected location
+- TEST: Mock the map API response to include unexpected location data or errors
+
+11. **As a user, I want to view a list of hotels in the selected location, so that I can explore accommodation options**
+
+- TEST: Test that the hotel list component is rendered on the weather view
+- TEST: Verify that the list displays correct hotel information, such as name, location and rating
+- TEST: Mock the hotel API response to return an empty array or null data
+
+12. **As a user, I want the hotel list to be displayed in a carousel format, so that I can easily navigate through the list**
+
+- TEST: Test that the hotel list is displayed in a carousel format
+- TEST: Test the behavior of the carousel component when it contains only one item
+
+13. **As a user, I want the hotel images to be presented in a slideshow within the hotel's carousel, so that I can preview the hotel amenities and facilities**
+
+- TEST: Test that each hotel item in the carousel contains a slideshow of images
+- TEST: Mock carousel data to include a limited number of items and test navigation beyond the last item
 
 ## Component Hierachy, State/Data Flow Diagrams
 

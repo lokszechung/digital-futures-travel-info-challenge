@@ -6,7 +6,7 @@ import useScreenSize from "../../../hooks/useScreenSize"
 
 import "./SavedLocations.css"
 
-const SavedLocations = ({ savedLocations, setSavedLocations }) => {
+const SavedLocations = ({ setSearch, savedLocations, setSavedLocations }) => {
 
   const screenSize = useScreenSize()
 
@@ -19,7 +19,7 @@ const SavedLocations = ({ savedLocations, setSavedLocations }) => {
   return (
     <div className="saved-locations">
       {orderedLocations.map(location => {
-        return <SavedSingleLocation key={location} location={location} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />
+        return <SavedSingleLocation key={location} location={location} setSearch={setSearch} savedLocations={savedLocations} setSavedLocations={setSavedLocations} />
       })}
     </div>
   )

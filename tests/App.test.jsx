@@ -7,7 +7,7 @@ describe("App tests", () => {
   it("App component should have search box", () => {
     render(<MemoryRouter><App /></MemoryRouter>)
 
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByRole("textbox")).toBeInTheDocument()
   })
 
 })

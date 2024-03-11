@@ -5,7 +5,6 @@ import { describe } from "vitest";
 
 vi.mock("axios");
 
-
 describe("getLocationWeatherUtil tests", () => {
 
   it('Gets weather data for london', async () => {
